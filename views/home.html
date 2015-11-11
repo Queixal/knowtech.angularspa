@@ -1,1 +1,51 @@
-hola mundo
+<p>
+    hola mundo
+</p>
+<hr/>
+<h2>Variables</h2>
+<p>
+    <!-- Accedemos a la variable text con {{<variable>}} de forma one-way -->
+    <!-- One way: los datos son los que nos devuelve el servidor, ni se modifican ni los modificamos -->
+    Variable $scope.text one-way = {{::text}}
+    <br />
+    <!-- Accedemos a la variable text con {{<variable>}} de forma two-way-->
+    <!-- Two way: los datos son los que nos devuelve el servidor al inicio y se modifican cuando el controlador cambia y modifica el objeto cuando el input cmabia-->
+    Variable $scope.text two-way= {{text}}
+</p>
+<hr/>
+<h2>Elementos</h2>
+<p>
+    <!-- La directiva ng-model enlaza el elemento del formulario con la variable a modificar en el objeto vista-->
+    Modificar la variable $scope.text = <input type="text" ng-model="text"/>
+    <br/>
+    <!-- La directiva ng-bind enlaza el contenedor con la variable a modificar en el objeto vista-->
+    <!-- Es equivalente a utilizar {{}}-->
+    One way: <span ng-bind="::text"></span>
+    <br/>
+    <!-- Es equivalente a utilizar {{}}-->
+    Two way: <span ng-bind="text"></span>
+    <br/>
+    <!-- Ejemplo uso checkbox-->
+    Two way: <input type="checkbox" ng-model="enabled"/>
+    
+</p>
+<hr/>
+<h2>Listas</h2>
+<p>
+    <label>Personas</label>
+    <!--definimos un input que almacene el nombre de persona que queremos añadir -->
+    <input type="text" ng-model="personName" />
+    
+    <!-- utilizamos la directiva ng-click que realiza un evento onclick, ese evento lo asociamos a la funcion addPerson del scope-->
+    <button ng-click="addPerson()">Add</button>
+    <ol>
+        <!--realizamos un bucle diciendo que nos itere el array persons y que la variable iterada sea person-->
+        <li ng-repeat="person in persons" >
+            <!-- Editamos la persona en cuestión con un ng-model-->
+            <span ng-bind="person.name" />
+            <br/>
+            <span>Edita el nombre:<input type="text" ng-model="person.name" /></span>
+            <button ng-click="dropPerson(person)">Remove</button>
+        </li>
+    </ol>
+</p>
