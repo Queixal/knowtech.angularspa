@@ -2,22 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script src="/js/lib/system.js"></script>
-  <script src="/js/config.js"></script>
+  <script src="/js/lib/system.js">
+</script>
+  <script src="/js/config.js">
+</script>
   <script>
-    System.import("/js/app.js").then(function() {
-      
-    }, function(err) {
-        console.log(err);
-    });
-  </script>
+System.import("/js/app.js").then(function() {
 
-  <title>SPA</title>
+}
+, function(err) {
+    console.log(err);
+}
+);
+</script>
+
+  <title>Chatify</title>
+  <link href="css/style.css" rel="steelsheet=" />
 </head>
 
 <body>
   <div id="contenedor">
-    <h1>My SPA</h2>
+  <md-content>
+     <md-toolbar>
+      <div class="md-toolbar-tools" ng-controller="sideNav" >
+        <md-button class="md-icon-button" aria-label="Settings"  ng-click="openLeftMenu()">
+          <span class="fa fa-bars"></span>
+        </md-button>
+        <i class="fa fa-rebel fa-5"></i> <h1>&nbsp; My Chatify</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <span class="fa fa-star-o"></span>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <span class="fa fa-plus-square"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
+    
+    <!--sidenav de angular-material-->
+    <div layout="row" ng-controller="sideNav">
+      <md-sidenav md-component-id="left" class="md-sidenav-left">
+          <md-toolbar>
+             <h2>&nbsp; Opciones
+               <md-button class="md-icon-button" aria-label="Settings"  ng-click="openLeftMenu()">
+                <i class="fa fa-arrow-right fa-5"></i>
+              </md-button>
+            </h2>
+          </md-toolbar>
+      </md-sidenav>
+
+    </div>
 
     <div ui-view></div>
   </div>

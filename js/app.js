@@ -3,7 +3,10 @@
 
 //Para hacer el export de app se utiliza {}
 import {modulo} from "/js/modules";
-import home from "/js/controllers/homeController";
+import homeController from "/js/controllers/homeController";
+import materialController from "/js/controllers/materialController";
+
+import fontawesome from "font-awesome";
 
 //En los imports que utilicen librerias de bower, utilizaremos el nombre del npm sin el .js
 //dado que no existen exports no hace falta poner {} es simplemente para realizar el import

@@ -14,8 +14,11 @@
     },
     "configFile": "js/config.js",
     "dependencies": {
+      "FortAwesome/font-awesome": "github:FortAwesome/font-awesome@^4.4.0",
       "angular": "github:angular/bower-angular@^1.4.7",
+      "angular-material": "github:angular/bower-material@^0.11.4",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "font-awesome": "npm:font-awesome@^4.4.0",
       "jquery": "github:components/jquery@^2.1.4"
     },
     "devDependencies": {

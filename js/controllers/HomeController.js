@@ -16,7 +16,7 @@ import restprovider from "/js/services/userRestClientProvider";
 //timeout => objeto que nos proporciona la api de los timeouts
 //stringHelper-> es el nombre de la key en el factory definido en el service stringHelperFactory
 //math -> el servicio de math definido en mathService
-controllers.controller("defaultController", function($scope, $timeout, stringHelper, mathService, userRestClient){
+controllers.controller("defaultController", function($scope, $timeout, stringHelper, mathService, userRestClient) {
     //realizamos la llamada al cliente rest para la prueba del provider
     userRestClient.getAllUsers();
     //definimos la variable text
@@ -40,15 +40,10 @@ controllers.controller("defaultController", function($scope, $timeout, stringHel
     //método onchange
     $scope.$watch("personNameToSearch", function(newValue, oldValue){
         $scope.personsAutocomplete.length = 0;
-        for(var i = 0;  i < $scope.persons.length; i++){
-            if ($scope.persons[i].name.indexOf(newValue) > -1) {
-                $scope.personsAutocomplete.push($scope.persons[i]); 
-            }
-        }
-
-        //TO DO
-        /*$scope.persons[i].filter(item => item.name.indexOf(newValue) > -1)
-            .forEach( item => $scope.personsAutocomplete.push(item)); */
+        //en el array persons, filtramos por la funcion que le pasamos
+        $scope.persons.filter(item => item.name.indexOf(newValue) > -1)
+        //nos devuelve otra array que iteramos y por cada item, realizamos un cuerpo
+            .forEach( item => $scope.personsAutocomplete.push(item));         
     });
 
     $scope.personsAutocomplete = [];
