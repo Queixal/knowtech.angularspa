@@ -1,0 +1,12 @@
+
+<h1>Friend list</h1>
+<md-list>
+  <md-list-item class="md-2-line"  ng-repeat="friend in friends">
+    <div ui-sref="friendlist.detail({nickname: friend.nickname})" class="md-list-item-text">
+      <h3>{{friend.nickname}}</h3>
+      <p>{{friend.description}}</p>
+    </div>
+  </md-list-item>
+</md-list>
+
+<div ng-show="friend != null" ui-view></div>

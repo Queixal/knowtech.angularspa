@@ -7,16 +7,23 @@
   <script src="/js/config.js">
 </script>
   <script>
-System.import("/js/app.js").then(function() {
+  //para gestionar la navegación es importante utilizar las history APIS
+  //history.pushState("aaa", {}, "/caca")
+  //Estamos añadiendo al registro una visita a /caca con el title "aaa" pasandole un opbjeto vacío
+  //el evento popstate es un evento que se lanza cuando se da al boton de atras del navegador, te devuelve por parámetros el objeto del state
 
-}
-, function(err) {
-    console.log(err);
-}
-);
+
+  System.import("/js/app.js").then(function() {
+
+  }
+  , function(err) {
+        console.log(err);
+      }
+  );
 </script>
 
   <title>Chatify</title>
+  <base href="/" />
   <link href="css/style.css" rel="steelsheet=" />
 </head>
 
@@ -50,6 +57,9 @@ System.import("/js/app.js").then(function() {
               </md-button>
             </h2>
           </md-toolbar>
+          <ol>
+            <li><a ui-sref="friendlist" ng-click="openLeftMenu()">Mis amigos </a> </li>
+          </ol>
       </md-sidenav>
 
     </div>

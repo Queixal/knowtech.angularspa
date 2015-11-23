@@ -5,6 +5,7 @@
 import {modulo} from "/js/modules";
 import homeController from "/js/controllers/homeController";
 import materialController from "/js/controllers/materialController";
+import friendlist from "/js/controllers/friendlistController";
 
 import fontawesome from "font-awesome";
 
@@ -29,8 +30,9 @@ export class App {
         modulo.value("color", "red");
 
         //es el main de angular, puede recibir proveedores
-        modulo.config(function($stateProvider, $urlRouterProvider, settings, userRestClientProvider) {
-            
+        modulo.config(function($stateProvider, $urlRouterProvider, $locationProvider, settings, userRestClientProvider) {
+            //queremos html5
+            $locationProvider.html5Mode(true);
             //definimos el uri
             userRestClientProvider.serviceUri = "knowtech";
             //por defecto utilizará la vista home
@@ -43,6 +45,17 @@ export class App {
                     url: "/home",
                     templateUrl: "/views/home.html",  
                     controller: "defaultController"
+                })
+                .state("friendlist", {
+                    url: "/friendlist",
+                    templateUrl: "/views/friendlist.html",  
+                    controller: "friendListController"
+                })
+                //añadimos una subvista
+                .state("friendlist.detail", {
+                    url: "/detail/:nickname",//con el stateparam friend que recuperaremos en friendlistController
+                    templateUrl: "/views/friendlist.detail.html",  
+                    controller: "friendListController"
                 });
         });
         angular.bootstrap(document.getElementById("contenedor"), ["ng-modulo"]);
