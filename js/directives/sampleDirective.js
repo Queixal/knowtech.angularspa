@@ -25,6 +25,7 @@ directives.directive("sampleDirective", function () {
 directives.directive("customClick", function () {
     return {
         restrict : "EA", //podemos utilizar <sampleDirective ... o bien <div sample-directice.. Element, Atribute, Class
+        //crea un scope de la directiva para no llegar al scope global, si no tuviese este scope, accedería al global 
         scope: {
             clickHandler: "&click" //$=> enlazar funcion
         },

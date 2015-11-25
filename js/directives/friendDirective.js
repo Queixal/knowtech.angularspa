@@ -7,7 +7,8 @@ directives.directive("friend", function () {
          restrict : "EA", //podemos utilizar <sampleDirective ... o bien <div sample-directice.. Element, Atribute, Class
          templateUrl: "/views/include/friend.inc", //include
     scope: {
-        nickname: "=nickname"  //bidireccional
+        //nombre en el scope : nombre del atributo
+        nickname: "=nickname",  //bidireccional
         description: "=description"  //bidireccional
     }
     
