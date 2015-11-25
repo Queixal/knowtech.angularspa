@@ -8,6 +8,8 @@ import materialController from "/js/controllers/materialController";
 import friendlist from "/js/controllers/friendlistController";
 
 import fontawesome from "font-awesome";
+import sampleDirective from "/js/directives/sampleDirective";
+import friendDirective from "/js/directives/friendDirective";
 
 //En los imports que utilicen librerias de bower, utilizaremos el nombre del npm sin el .js
 //dado que no existen exports no hace falta poner {} es simplemente para realizar el import

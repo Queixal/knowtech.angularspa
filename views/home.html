@@ -66,3 +66,24 @@
     </ol>
 
 </p>
+<hr/>
+
+
+
+   <h2>Directivas</h2>
+   <p>
+        <label>sampleDirective</label>
+        <br/>
+       Se repetirá lo que se escriba en el textfield de Personas
+       <sample-directive text="personName" /> 
+   </p>
+   <p>
+        <label>Click directive</label>
+        <br/>
+        Se repetirá lo que se escriba en el textfield de Personas
+        <br/>
+         <label>Personas</label>
+        <!--definimos un input que almacene el nombre de persona que queremos añadir -->
+        <input type="text" ng-model="personName" />
+        <button custom-click click="addPerson()" > Add </button 
+   </p>
