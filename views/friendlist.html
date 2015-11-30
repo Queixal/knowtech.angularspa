@@ -1,7 +1,21 @@
 
 <h1>Friend list</h1>
+<p>
+    <label>Añade personas</label>
+    <!--definimos un input que almacene el nombre de persona que queremos añadir -->
+    <input type="text" ng-model="newFriendName" />
+    <!-- utilizamos la directiva ng-click que realiza un evento onclick, ese evento lo asociamos a la funcion addPerson del scope-->
+    <button ng-click="addFriend()">Add</button>
+</p>
+<p>
+    <label>Modifica personas</label>
+    <!--definimos un input que almacene el nombre de persona que queremos añadir -->
+    <input type="text" ng-model="selectedFriend.nickname" />
+    <!-- utilizamos la directiva ng-click que realiza un evento onclick, ese evento lo asociamos a la funcion addPerson del scope-->
+    <button ng-click="modifyFriend()">Edit</button>
+</p>
 <md-list>
-  <md-list-item class="md-2-line"  ng-repeat="friend in friends">
+  <md-list-item class="md-2-line"  ng-class="{'selected' : friend == selectedFriend}" ng-repeat="friend in friends" ng-click="selectFriend(friend)">
     <div ui-sref="friendlist.detail({nickname: friend.nickname})" class="md-list-item-text">
       <friend nickname="friend.nickname" descripction="friend.description" />
     </div>
