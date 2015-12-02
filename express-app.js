@@ -33,10 +33,11 @@ app.put("/api/v1/friends/:id", function(req, res) {
 
 app.get("/*", function(req, res) {
     var filePath = req.originalUrl;
-    
-    if (filePath === "/")
+    var fileExtension = path.extname(filePath);
+
+    if (fileExtension == "") {
         filePath = "./index.html";
-    else {
+    } else {
         filePath = "./" + filePath;
     }
     
@@ -46,6 +47,11 @@ app.get("/*", function(req, res) {
         filepath = filePath.substring(0, indexOfQuerySymbol);
     }
     
+    if (!fs.existsSync(filePath)) {
+        res.sendStatus(404);
+        return;
+    }
+
     switch (path.extname(filePath)) {
     	case ".inc":
         case ".html":

@@ -15,7 +15,8 @@ System.config({
 
   map: {
     "FortAwesome/font-awesome": "github:FortAwesome/font-awesome@4.4.0",
-    "angular": "github:angular/bower-angular@1.4.7",
+    "angular": "github:angular/bower-angular@1.4.8",
+    "angular-animate": "github:angular/bower-angular-animate@1.4.8",
     "angular-material": "github:angular/bower-material@0.11.4",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.33",
@@ -24,16 +25,19 @@ System.config({
     "font-awesome": "npm:font-awesome@4.4.0",
     "jquery": "github:components/jquery@2.1.4",
     "github:angular-ui/ui-router@0.2.15": {
-      "angular": "github:angular/bower-angular@1.4.7"
+      "angular": "github:angular/bower-angular@1.4.8"
     },
     "github:angular/bower-angular-animate@1.4.7": {
-      "angular": "github:angular/bower-angular@1.4.7"
+      "angular": "github:angular/bower-angular@1.4.8"
+    },
+    "github:angular/bower-angular-animate@1.4.8": {
+      "angular": "github:angular/bower-angular@1.4.8"
     },
     "github:angular/bower-angular-aria@1.4.7": {
-      "angular": "github:angular/bower-angular@1.4.7"
+      "angular": "github:angular/bower-angular@1.4.8"
     },
     "github:angular/bower-material@0.11.4": {
-      "angular": "github:angular/bower-angular@1.4.7",
+      "angular": "github:angular/bower-angular@1.4.8",
       "angular-animate": "github:angular/bower-angular-animate@1.4.7",
       "angular-aria": "github:angular/bower-angular-aria@1.4.7",
       "css": "github:systemjs/plugin-css@0.1.19"

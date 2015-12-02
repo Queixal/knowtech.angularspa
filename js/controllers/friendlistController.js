@@ -9,8 +9,22 @@
 import {controllers} from "/js/modules";
 
 //Controladora para el friendList
-controllers.controller("friendListController", function($scope, $stateParams, $http) {
+controllers.controller("friendListController", function($scope, $stateParams, $timeout, $http) {
+    //No es un checking uno a uno, se espera a que realice la función y después vuelca todos los datos de forma unitaria
+    $scope.textoPruebaDirtyChecking = "hello world before dirty checking"
+    $timeout(function() {
+        $scope.textoPruebaDirtyChecking = "hello world after dirty checking";
+    },1000);
+
+    //Para realizar otro dirty checking hay que realizar un apply
     
+       setTimeout(function() {
+           $scope.$apply(function() {
+                $scope.textoPruebaDirtyChecking = "Forzamos un dirty checking";
+           });
+        }, 2000) ;
+    
+
     $scope.friends = [];
     
     $http.get("/api/v1/friends").then(function(response){
@@ -44,4 +58,4 @@ controllers.controller("friendListController", function($scope, $stateParams, $h
 });
 
 //inyectamos los parámetros de entrada para el controler
-controllers.$inject = ["$scope", "$stateParams", "$http"]
+controllers.$inject = ["$scope", "$stateParams", "$timeout", "$http"]

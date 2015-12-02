@@ -16,6 +16,7 @@
     "dependencies": {
       "FortAwesome/font-awesome": "github:FortAwesome/font-awesome@^4.4.0",
       "angular": "github:angular/bower-angular@^1.4.7",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.8",
       "angular-material": "github:angular/bower-material@^0.11.4",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "font-awesome": "npm:font-awesome@^4.4.0",
@@ -28,11 +29,9 @@
     }
   },
   "devDependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "grunt": "^0.4.5",
-    "grunt-contrib-connect": "^0.11.2",
     "body-parser": "^1.9.2",
-    "express": "^4.10.1"
+    "express": "^4.10.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.11.2"
   }
 }
